@@ -1,8 +1,8 @@
 # HospitalApp
 Hospital App
 
-#Starting Server
+# Starting Server
 node ./server/index.js
 
-#Requirements
+# Requirements
 npm, mongodb,express
