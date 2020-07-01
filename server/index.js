@@ -16,26 +16,32 @@ app.use(bodyParser.json())
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(cwd + '/patdoc/Patient.Doctor selection.html'));
+    res.sendFile(path.join(cwd + '/pages/Patient.Doctor selection.html'));
 })
 
 
-app.get('/', (req, res) => {
-    res.sendFile(path.join(cwd + '/doctor/1/Doctor Selection.html'));
+app.get('/doctor', (req, res) => {
+    res.sendFile(path.join(cwd + '/pages/Doctor Selection.html'));
 })
 
-
-app.get('/', (req, res) => {
-    res.sendFile(path.join(cwd + '/doctor/2/Doctor Webpage.html'));
+app.get('/doctor/:id', (req, res) => {
+	var id = req.params.id;
+	console.log("Doctor "+ id + " is in session")
+    res.sendFile(path.join(cwd + '/pages/Doctor Webpage.html'));
 })
 
-
-app.get('/', (req, res) => {
-    res.sendFile(path.join(cwd + '/patient/1/Patient Selection.html'));
+app.get('/patient', (req, res) => {
+    res.sendFile(path.join(cwd + '/pages/Patient Selection.html'));
 })
 
-
-app.get('/', (req, res) => {
-    res.sendFile(path.join(cwd + '/patient/2/Patient Webpage.html'));
+app.get('/patient/:id', (req, res) => {
+	var id = req.params.id;
+	console.log("Patient "+id+" is in session")
+    res.sendFile(path.join(cwd + '/pages/Patient Webpage.html'));
 })
+
+app.get('/thanks', (req, res) => {
+    res.sendFile(path.join(cwd + '/pages/thanks.html'));
+})
+
 app.listen(apiPort, () => console.log('Server running on port 3000'))

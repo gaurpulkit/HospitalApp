@@ -9,18 +9,19 @@
 
 
 
-<form action="/action_page.php">
+<form action="/" style ="text-align:center;">
   <label for="">Choose :</label>
-  <select name="medicines" id="medicines">
+  <select name="user" id="user" onchange="location = this.value;">
+    <option value=""></option>
     <option value="doctor">Doctor</option>
     <option value="patient">Patient</option>
     
   </select>
   <br><br>
-  <input type="submit" value="Submit">
+  <!-- <input type="submit" value="Submit"> -->
 </form>
 
-<p>Click the "Submit" button after your selection.</p>
+<!-- <p style ="text-align:center;">Click the "Submit" button after your selection.</p> -->
 
 </body>
 </html>
